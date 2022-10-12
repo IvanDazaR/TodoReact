@@ -1,0 +1,17 @@
+@import 'global.scss';
+
+.TodoSearch {
+    width: 403px;
+    height: 40px;
+    left: 812px;
+    top: 322px;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba($color: #000000, $alpha: 0.25);
+}
+::placeholder {
+    padding: 8px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+}

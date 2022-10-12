@@ -1,8 +1,9 @@
 import React from "react";
+import './styles/TodoCounter.scss';
 
 function TodoCounter(){
     return (
-        <h2>Has completado 2 de 3 TODOs</h2>
+        <h2 className="TodoCounter">You have completed 2 of 3 tasks</h2>
     );
 }
 

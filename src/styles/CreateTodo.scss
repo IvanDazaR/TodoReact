@@ -1,0 +1,18 @@
+.CreateTodo {
+    box-sizing: border-box;
+    position: absolute;
+    width: 412px;
+    height: 50px;
+    left: 100px;
+    top: 285px;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+   
+}
+.CreateTodo::placeholder {
+    padding: 16px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}

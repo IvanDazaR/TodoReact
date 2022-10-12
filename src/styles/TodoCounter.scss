@@ -1,0 +1,17 @@
+@import 'global.scss';
+
+.TodoCounter {
+    // position: absolute;
+    margin: 0;
+    width: 423px;
+    height: 106px;
+    left: 802px;
+    top: 200px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 53px;
+    text-align: center;
+    color: $yellow;
+}

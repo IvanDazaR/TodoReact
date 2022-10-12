@@ -1,8 +1,9 @@
 import React from "react";
+import './styles/CreateTodoButton.scss';
 
 function CreateTodoButton(){
     return(
-        <button>Create Task</button>
+        <button className="CreateTodoButton">Create Task</button>
     );
     
 }
