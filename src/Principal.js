@@ -8,7 +8,7 @@ function Principal(){
         <div className="principal">
             <h1>Create a New Task</h1>
             <CreateTodo />
-            {/* <CreateTodoButton /> */}
+            <CreateTodoButton />
             {/* <image src='./images/book.png'></image> */}
         </div>
     )
