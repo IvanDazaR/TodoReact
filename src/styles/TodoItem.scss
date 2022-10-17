@@ -12,22 +12,22 @@
     border-radius: 10px;
 
   }
-  label {
-      margin: 10px 16px ;
+  .TodoItem-lable {
+      margin: 8px 16px;
       display: block;
       width: 26px;
       height: 26px;
       cursor: pointer;
   }
-//   input {
-//       position: absolute;
-//       transform: scale(0);
-//   }
+  .TodoItem-input {
+      position: absolute;
+      transform: scale(0);
+  }
   input:checked ~ .checkbox {
       transform: rotate(45deg);
       width: 10px;
       margin-left: 8px;
-      border-color: green;
+      border-color: $green;
       border-top-color: transparent;
       border-left-color: transparent;
       border-radius: 0;
@@ -36,7 +36,7 @@
     display: block;
     width: inherit;
     height: inherit;
-    border: 3px solid #434343;
+    border: 3px solid $check-black;
     border-radius: 6px;
     transition: all 0.375s;
 }

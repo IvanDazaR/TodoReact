@@ -4,7 +4,7 @@ import './styles/CreateTodo.scss';
 function CreateTodo(){
     return (
         <div className="input-group">
-            <label htmlFor="create-task">Write Your Task</label>
+            <label className="input-group__lable" htmlFor="create-task">Write Your Task</label>
             <input type="text" id="create-task"/>
         </div>
     );
