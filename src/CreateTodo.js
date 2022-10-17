@@ -3,7 +3,10 @@ import './styles/CreateTodo.scss';
 
 function CreateTodo(){
     return (
-        <input className="CreateTodo" placeholder="Write Your Task"/>
+        <div className="input-group">
+            <label htmlFor="create-task">Write Your Task</label>
+            <input type="text" id="create-task"/>
+        </div>
     );
 }
 

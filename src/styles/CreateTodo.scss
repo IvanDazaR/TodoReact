@@ -1,18 +1,38 @@
-.CreateTodo {
-    box-sizing: border-box;
+@import './global.scss';
+
+.input-group {
     position: absolute;
+    top: 285px;
+    left: 100px;
+    width: auto;
+}
+label {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    transform: translate(10px, 10px);
+    transform-origin: left;
+    transition: transform .25s;
+}
+#create-task {
     width: 412px;
     height: 50px;
-    left: 100px;
-    top: 285px;
-    box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0;
+    margin: 16px 0;
+    border: none;
     border-radius: 10px;
-   
+    font: inherit;
+    background-color: transparent;
+    outline: 2px solid $just-black;
+    box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.35);
 }
-.CreateTodo::placeholder {
-    padding: 16px;
+.input-group:focus-within label {
+    transform: translate(0, -30px) scale(.8);
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 20px;
+    line-height: 23px;
+}
+.input-group:focus-within #name {
+    outline-color: $blue-light;
 }
