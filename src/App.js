@@ -3,9 +3,9 @@ import { Principal } from "./Principal";
 import { Second } from "./Second";
 
 const defaultTodos = [
-  {  text: 'Study Duolingo', completed: true},
+  {  text: 'Study Duolingo', completed: false},
   {  text: 'React from 0', completed: false},
-  {  text: 'Canada Papers!', completed: true},
+  {  text: 'Canada Papers!', completed: false},
 ];
 
 function App() {
@@ -28,7 +28,6 @@ function App() {
       return todoText.includes(searchText);
     });
   }
-
   return (
     <React.Fragment>
       <Principal />
@@ -39,7 +38,7 @@ function App() {
         setTodos={setTodos}
         total={totalTodos}
         completed={completedTodos}
-        searcheedTodos={searchedTodos}
+        searchedTodos={searchedTodos}
       />
     </React.Fragment>
     

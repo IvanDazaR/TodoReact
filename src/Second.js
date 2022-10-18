@@ -7,8 +7,20 @@ import './styles/Second.scss';
 
 
 
-function Second({searchValue, setSearchValue, todos, setTodos, total, completed, searcheedTodos}){
+function Second({searchValue, setSearchValue, todos, setTodos, total, completed, searchedTodos}){
 
+    const completeTodo = (text) => {
+        const todoIndex = todos.findIndex(todo => todo.text === text);
+        const newTodos = [...todos];
+        newTodos[todoIndex].completed = true;
+        setTodos(newTodos);
+      };
+    const deleteTodo = (text) => {
+        const todoIndex = todos.findIndex(todo => todo.text === text);
+        const newTodos = [...todos];
+        newTodos.splice(todoIndex, 1);
+        setTodos(newTodos);
+      };
     
 
     return(
@@ -22,12 +34,16 @@ function Second({searchValue, setSearchValue, todos, setTodos, total, completed,
                 setSearchValue={setSearchValue}
             />
             <TodoList>
-                {searcheedTodos.map(todo => (
+                {searchedTodos.map(todo => (
                 <TodoItem 
-                key ={todo.text}
-                text={todo.text}/>
+                    key ={todo.text}
+                    text={todo.text}
+                    completed={todo.completed}
+                    onComplete={()=> completeTodo(todo.text)}
+                    onDelete={()=> deleteTodo(todo.text)}
+                />
                 ))}
-                </TodoList>
+            </TodoList>
         </div>
     );
 }
