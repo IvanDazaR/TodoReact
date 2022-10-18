@@ -7,7 +7,7 @@ import './styles/Second.scss';
 
 
 
-function Second({searchValue, setSearchValue, todos, setTodos, total, completed}){
+function Second({searchValue, setSearchValue, todos, setTodos, total, completed, searcheedTodos}){
 
     
 
@@ -22,7 +22,7 @@ function Second({searchValue, setSearchValue, todos, setTodos, total, completed}
                 setSearchValue={setSearchValue}
             />
             <TodoList>
-                {todos.map(todo => (
+                {searcheedTodos.map(todo => (
                 <TodoItem 
                 key ={todo.text}
                 text={todo.text}/>
