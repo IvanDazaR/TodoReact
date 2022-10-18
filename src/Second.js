@@ -5,17 +5,22 @@ import { TodoList } from "./TodoList";
 import { TodoItem } from "./TodoItem";
 import './styles/Second.scss';
 
-const todos = [
-    {  text: 'Study Duolingo', completed: false},
-    {  text: 'React from 0', completed: false},
-    {  text: 'Canada Papers!', completed: false},
-  ];
 
-function Second(){
+
+function Second({searchValue, setSearchValue, todos, setTodos, total, completed}){
+
+    
+
     return(
         <div className="second">
-            <TodoCounter />
-            <TodoSearch />
+            <TodoCounter 
+                completed ={completed}
+                total={total}
+            />
+            <TodoSearch  
+                searchValue={searchValue}
+                setSearchValue={setSearchValue}
+            />
             <TodoList>
                 {todos.map(todo => (
                 <TodoItem 
