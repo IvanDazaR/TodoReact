@@ -7,28 +7,7 @@ import '../styles/Second.scss';
 
 
 
-function Second({searchValue, setSearchValue, todos, setTodos, total, completed, searchedTodos}){
-
-    const saveTodos = (newTodos) => {
-        const stringifiedTodos = JSON.stringify(newTodos);
-        localStorage.setItem('TODOS_V1', stringifiedTodos);
-        setTodos(newTodos);
-    };
-
-    const completeTodo = (text) => {
-        const todoIndex = todos.findIndex(todo => todo.text === text);
-        const newTodos = [...todos];
-        newTodos[todoIndex].completed = true;
-        saveTodos(newTodos);
-      };
-    const deleteTodo = (text) => {
-        const todoIndex = todos.findIndex(todo => todo.text === text);
-        const newTodos = [...todos];
-        newTodos.splice(todoIndex, 1);
-        saveTodos(newTodos);
-      };
-    
-
+function Second({searchValue, setSearchValue, total, completed, searchedTodos,completeTodo,deleteTodo}){
     return(
         <div className="second">
             <TodoCounter 

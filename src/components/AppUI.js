@@ -11,6 +11,8 @@ function AppUI({
     totalTodos,
     completedTodos,
     searchedTodos,
+    completeTodo,
+    deleteTodo,
 }){
     return(
     <React.Fragment>
@@ -23,6 +25,8 @@ function AppUI({
         total={totalTodos}
         completed={completedTodos}
         searchedTodos={searchedTodos}
+        completeTodo={completeTodo}
+        deleteTodo={deleteTodo}
       />
     </React.Fragment>
     );
