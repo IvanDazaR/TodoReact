@@ -1,5 +1,5 @@
 import React from "react";
-import './styles/CreateTodoButton.scss';
+import '../styles/CreateTodoButton.scss';
 
 function CreateTodoButton(){
     const onClickButton = (msg)=>{

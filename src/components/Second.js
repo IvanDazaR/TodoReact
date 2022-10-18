@@ -3,7 +3,7 @@ import { TodoCounter } from "./TodoCounter";
 import { TodoSearch } from "./TodoSearch";
 import { TodoList } from "./TodoList";
 import { TodoItem } from "./TodoItem";
-import './styles/Second.scss';
+import '../styles/Second.scss';
 
 
 

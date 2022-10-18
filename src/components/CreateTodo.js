@@ -1,5 +1,5 @@
 import React from "react";
-import './styles/CreateTodo.scss';
+import '../styles/CreateTodo.scss';
 
 function CreateTodo(){
     return (

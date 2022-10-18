@@ -1,14 +1,12 @@
 import React from "react";
-import { Principal } from "./Principal";
-import { Second } from "./Second";
-
+import { AppUI } from "./AppUI";
 const defaultTodos = [
   {  text: 'Study Duolingo', completed: false},
   {  text: 'React from 0', completed: false},
   {  text: 'Canada Papers!', completed: false},
 ];
 
-function App() {
+function App(props) {
 
   const [todos, setTodos] = React.useState(defaultTodos);
   const [searchValue, setSearchValue] = React.useState('');
@@ -29,18 +27,15 @@ function App() {
     });
   }
   return (
-    <React.Fragment>
-      <Principal />
-      <Second 
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-        todos={todos}
-        setTodos={setTodos}
-        total={totalTodos}
-        completed={completedTodos}
-        searchedTodos={searchedTodos}
-      />
-    </React.Fragment>
+    <AppUI 
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      todos={todos}
+      setTodos={setTodos}
+      totalTodos={totalTodos}
+      completedTodos={completedTodos}
+      searchedTodos={searchedTodos}
+    />
     
   );
 }

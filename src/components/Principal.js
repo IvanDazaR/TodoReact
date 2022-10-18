@@ -1,8 +1,8 @@
 import React from "react";
 import { CreateTodoButton } from "./CreateTodoButton";
 import { CreateTodo } from "./CreateTodo";
-import './styles/Principal.scss';
-import book from './images/book.svg';
+import '../styles/Principal.scss';
+import book from '../images/book.svg';
 function Principal(){
     return(
         <div className="principal">
