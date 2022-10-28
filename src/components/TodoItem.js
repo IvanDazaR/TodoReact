@@ -1,8 +1,12 @@
 import React from "react";
 import '../styles/TodoItem.scss';
+import { TodoContext } from "./TodoContext";
 
 function TodoItem (props){
-   
+   const {
+    openModal,
+    setOpenModal
+   } = React.useContext(TodoContext);
     
     return(
         <li className="TodoItem">
@@ -18,7 +22,8 @@ function TodoItem (props){
             </p>
             <span 
                 className="Icon Icon-delete"
-                onClick={props.onDelete}
+                // onClick={props.onDelete}
+                onClick={() => setOpenModal(!openModal)} 
             >
                 X
             </span>
