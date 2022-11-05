@@ -15,7 +15,7 @@ function TodoProvider(props){
 
 
     const [textValue, setTextValue] = React.useState("");
-
+    const [newTodoValue, setNewTodoValue] = React.useState('');
 
 
     const [openModal, setOpenModal] = React.useState(false);
@@ -46,7 +46,7 @@ function TodoProvider(props){
         //Clear the input after save the ToDOs
         // const clearinput = document.getElementById('create-task');
         // clearinput.value = '';
-        // setNewTodoValue('');
+        setNewTodoValue('');
     };
     const completeTodo = (text) => {
         const todoIndex = todos.findIndex(todo => todo.text === text);
@@ -79,6 +79,8 @@ function TodoProvider(props){
             setOpenModal,
             textValue,
             setTextValue,
+            newTodoValue,
+            setNewTodoValue,
         }}>
             {props.children}
         </TodoContext.Provider>

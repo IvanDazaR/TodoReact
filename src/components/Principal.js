@@ -3,9 +3,14 @@ import { CreateTodoButton } from "./CreateTodoButton";
 import { CreateTodo } from "./CreateTodo";
 import '../styles/Principal.scss';
 import book from '../images/book.svg';
+import { TodoContext } from "./TodoContext"; 
+
 function Principal(){
 
-    const [newTodoValue, setNewTodoValue] = React.useState('');
+    const {
+        newTodoValue,
+        setNewTodoValue,
+    } = React.useContext(TodoContext);
     
     const onSubmit = (event) => {
         event.preventDefault();
@@ -25,7 +30,7 @@ function Principal(){
                 setNewTodoValue={setNewTodoValue}
             />
             <img src={book} alt="Book-img"></img>
-        </form >
+        </form > 
     )
 }
 

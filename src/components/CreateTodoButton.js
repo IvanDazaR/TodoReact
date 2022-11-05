@@ -11,19 +11,16 @@ function CreateTodoButton(props){
     const onSubmit = () => {
        
         // Utilizamos nuestra función para añadir nuestro TODO
+        if(props.newTodoValue.length <= 0)return;
         addTodo(props.newTodoValue);
-        // Cerramos nustro modal
-        // setOpenModal(false);
-        // También estaría bien resetear nuestro formulario
-        // setNewTodoValue('')
-        alert('OnSubmit');
+      
       };
     
     return(
         <button 
             type="submit"
             className="CreateTodoButton"
-            onClick={() =>onSubmit}
+            onClick={onSubmit}
         >
             Create Task
         </button>

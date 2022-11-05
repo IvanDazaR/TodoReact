@@ -4,7 +4,7 @@ import '../styles/CreateTodo.scss';
 function CreateTodo(props){
 
     const onChange =(event)=> {
-        
+
         props.setNewTodoValue(event.target.value);
     }
     
@@ -12,12 +12,13 @@ function CreateTodo(props){
         <div className="input-group">
             <label className="input-group__lable" htmlFor="create-task">Write Your Task</label>
             <input 
+                required
                 value={props.newTodoValue}
                 onChange={onChange}
                 type="text" 
                 id="create-task"
             /> 
-        </div>
+        </div> 
     );
 }
 
