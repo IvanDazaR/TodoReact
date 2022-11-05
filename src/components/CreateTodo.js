@@ -12,11 +12,11 @@ function CreateTodo(props){
         <div className="input-group">
             <label className="input-group__lable" htmlFor="create-task">Write Your Task</label>
             <input 
-                // value={props.newTodoValue}
+                value={props.newTodoValue}
                 onChange={onChange}
                 type="text" 
                 id="create-task"
-            />
+            /> 
         </div>
     );
 }

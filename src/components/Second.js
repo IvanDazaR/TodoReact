@@ -5,6 +5,8 @@ import { TodoList } from "./TodoList";
 import { TodoItem } from "./TodoItem";
 import '../styles/Second.scss';
 import { TodoContext } from "./TodoContext";
+import { Modal } from "./Modal";
+import {TodoForm} from "./TodoForm";
 
     // const defaultTodos = [
     //   { text: 'Cortar cebolla', completed: false },
@@ -21,12 +23,23 @@ function Second(){
         loading,
         error,
         openModal,
-        setOpenModal
+        // setOpenModal,
     } = React.useContext(TodoContext);
 
-    // const onDelete = (text) =>{
-    //     deleteTodo(text)
-    // }
+    const prueba = searchedTodos.map((todo) => (
+        <TodoItem 
+            key ={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={()=> completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
+            // textValue={() => saveText(todo.text)}
+            // onDelete={ () => deleteTodo(todo.text)} 
+            // onDelete={() => aux = todo.text} 
+            // openModal={openModal}
+            // setOpenModal={setOpenModal}
+        />
+        ) )
     return(
         <div className="second">
             <TodoCounter/>
@@ -37,17 +50,22 @@ function Second(){
                 {loading && <p>Estamos cargando, no desesperes...</p> }
                 {(!loading && !searchedTodos.length) && <p>Crea tu primer To Do!</p> }
     
-                {searchedTodos.map((todo) => (
+                {/* {searchedTodos.map((todo) => (
                 <TodoItem 
                     key ={todo.text}
                     text={todo.text}
                     completed={todo.completed}
                     onComplete={()=> completeTodo(todo.text)}
-                    onDelete={ () => deleteTodo(todo.text)} 
-                    openModal={openModal}
-                    setOpenModal={setOpenModal}
+                    // textValue={() => saveText(todo.text)}
+                    // onDelete={ () => deleteTodo(todo.text)} 
+                    // onDelete={() => aux = todo.text} 
+                    // openModal={openModal}
+                    // setOpenModal={setOpenModal}
                 />
-                ))}
+                ) )} */}
+
+                {prueba}
+              
             </TodoList>
         </div>
     );
