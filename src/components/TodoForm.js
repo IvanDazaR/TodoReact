@@ -18,9 +18,10 @@ function TodoForm(props){
     return(
         <div className="TodoForm">
             <p>Do you want to delete "{props.textValue}" from your To Do List?</p>
-            <button onClick={() => setOpenModal(false)} className="button cancel-button">Cancel</button>
-            {/* <button onClick={deleteTodo(props.aux)} className="button accept-button">Accept</button> */}
-            <button onClick={onDelete} className="button accept-button">Accept</button>
+            <div>
+                <button onClick={() => setOpenModal(false)} className="button cancel-button">Cancel</button>
+                <button onClick={onDelete} className="button accept-button">Accept</button>
+            </div>
 
         </div>
     );
