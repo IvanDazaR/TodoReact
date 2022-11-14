@@ -36,6 +36,7 @@ function TodoProvider(props){
         });
     };
 
+    
     const addTodo = (text) => {
         const newTodos = [...todos];
         newTodos.push({
@@ -43,17 +44,16 @@ function TodoProvider(props){
             text
         });
         saveTodos(newTodos);
-        //Clear the input after save the ToDOs
-        // const clearinput = document.getElementById('create-task');
-        // clearinput.value = '';
         setNewTodoValue('');
     };
+
     const completeTodo = (text) => {
         const todoIndex = todos.findIndex(todo => todo.text === text);
         const newTodos = [...todos];
-        newTodos[todoIndex].completed = true;
+        newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
         saveTodos(newTodos);
     };
+
     const deleteTodo = (text) => {
         const todoIndex = todos.findIndex(todo => todo.text === text);
         const newTodos = [...todos];
@@ -81,6 +81,8 @@ function TodoProvider(props){
             setTextValue,
             newTodoValue,
             setNewTodoValue,
+            // isChecked,
+            // setIsChecked,
         }}>
             {props.children}
         </TodoContext.Provider>

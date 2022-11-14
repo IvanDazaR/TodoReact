@@ -4,8 +4,9 @@ import { TodoContext } from "./TodoContext";
 import { Modal } from "./Modal";
 import { TodoForm } from "./TodoForm";
 
-function TodoItem (props){
 
+function TodoItem (props){
+    
     const {
         openModal,
         setOpenModal,
@@ -13,25 +14,29 @@ function TodoItem (props){
         textValue,
     } = React.useContext(TodoContext);
 
-    
-    // const [state, setState] = React.useState("Soy el inicial");
-
-// console.log(textValue);
-
+    const [isChecked, setIsChecked] = React.useState(props.completed ? true : false);
 
 const onClickXButton = () => {
         setTextValue(props.text);
         setOpenModal(true);
     };
-   
+    
+    const handleOnChange = () => {
+        setIsChecked(!isChecked);
+      };
     return(
         <>
             <li className="TodoItem">
                 <label className="TodoItem-lable">
-                    <input className="TodoItem-input" type="checkbox" />
-                    <span 
+                    <input 
+                        className="TodoItem-input" 
+                        type="checkbox"
+                        checked={isChecked}
+                        onChange={handleOnChange}
+                    />
+                    <span
                         className="checkbox"
-                        onClick={props.onComplete}    
+                        onClick={props.onComplete}
                     />
                 </label>
                 <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
