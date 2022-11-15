@@ -1,0 +1,24 @@
+@import '../styles/global.scss';
+
+.empty-container {
+    margin-top: 100px ;
+    width: auto;
+    height: 75px;
+    text-align: center;
+}
+.empty-container p{
+    color: $just-white;
+    font-size: 30px;
+    margin: 16px;
+}
+.empty-container p:nth-child(2){
+    opacity: .6;
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+
+
+}
+.empty-container p:nth-child(3){
+    font-size: 50px;
+}

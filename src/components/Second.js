@@ -6,6 +6,10 @@ import { TodoItem } from "./TodoItem";
 import '../styles/Second.scss';
 import { TodoContext } from "./TodoContext";
 
+import {TodosError} from './TodosError';
+import {TodosLoading} from './TodosLoading';
+import {EmptyTodos} from './EmptyTodos';
+
     // const defaultTodos = [
     //   { text: 'Cortar cebolla', completed: false },
     //   { text: 'Tomar el cursso de intro a React', completed: false },
@@ -37,9 +41,9 @@ function Second(){
             <TodoSearch />
             <TodoList>
                 {/* Manage UseEffect with loading and errors */}
-                {error && <p>Desesperate, hubo un error...</p> }
-                {loading && <p>Estamos cargando, no desesperes...</p> }
-                {(!loading && !searchedTodos.length) && <p>Crea tu primer To Do!</p> }
+                {error && <TodosError  error={error} />}
+                {loading && <TodosLoading />}
+                {(!loading && !searchedTodos.length) && <EmptyTodos />}
 
                 {prueba}
             </TodoList>

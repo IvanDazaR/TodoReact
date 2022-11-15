@@ -1,0 +1,16 @@
+@import '../styles/global.scss';
+
+.error-container {
+    margin-top: 100px ;
+    width: auto;
+    height: 75px;
+    text-align: center;
+}
+.error-container p{
+    color: $just-white;
+    font-size: 30px;
+    margin: 16px;
+}
+.error-container p:nth-child(3){
+    font-size: 50px;
+}
