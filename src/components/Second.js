@@ -28,7 +28,8 @@ function Second(){
 
     const prueba = searchedTodos.map((todo) => (
         <TodoItem 
-            key ={todo.text}
+            key ={crypto.randomUUID()}
+            // key ={todo.text}
             text={todo.text}
             completed={todo.completed}
             onComplete={()=> completeTodo(todo.text)}
