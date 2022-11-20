@@ -3,7 +3,7 @@ import '../styles/TodoItem.scss';
 import { TodoContext } from "./TodoContext";
 import { Modal } from "./Modal";
 import { TodoForm } from "./TodoForm";
-
+import { IoIosCloseCircleOutline } from 'react-icons/io';
 
 function TodoItem (props){
     
@@ -46,7 +46,7 @@ const onClickXButton = () => {
                     className="Icon Icon-delete"
                     onClick={onClickXButton}
                 >
-                    X
+                    <IoIosCloseCircleOutline />
                 </span>
             </li>
 
