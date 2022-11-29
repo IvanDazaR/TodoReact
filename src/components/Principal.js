@@ -14,12 +14,10 @@ function Principal(){
     
     const onSubmit = (event) => {
         event.preventDefault();
-        // const inputCreateTask = document.getElementById("create-task");
-        // inputCreateTask.value = '';
     }
 
     return(
-        <form onSubmit={onSubmit} className="principal">
+        <form onSubmit={onSubmit} className="principal" name="myform">
             <h1>Create a New Task</h1>
             <CreateTodo 
                 newTodoValue={newTodoValue}

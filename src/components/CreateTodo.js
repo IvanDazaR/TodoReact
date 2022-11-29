@@ -7,16 +7,18 @@ function CreateTodo(props){
 
         props.setNewTodoValue(event.target.value);
     }
-    
+    // const inputRequired = () =>{
+        
+    // }
     return (
         <div className="input-group">
             <label className="input-group__lable" htmlFor="create-task">Write Your Task</label>
             <input 
-                required
                 value={props.newTodoValue}
                 onChange={onChange}
                 type="text" 
                 id="create-task"
+                // onBlur={}
             /> 
         </div> 
     );
