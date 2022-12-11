@@ -3,15 +3,18 @@
 .input-group {
     position: relative;
     margin-left: 100px;
+    cursor: text;
 }
 .input-group__lable {
+    cursor: text;
     position: absolute;
     top: 8px;
     left: 0;
-
     transform: translate(10px, 10px);
     transform-origin: left;
     transition: transform .25s;
+    background-color: $just-white;
+    width: 420px;
 }
 #create-task {
     width: 412px;
@@ -31,6 +34,7 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
+    background-color: transparent;
 }
 .input-group:focus-within #create-task {
     outline-color: $blue-light;
