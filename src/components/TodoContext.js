@@ -14,7 +14,7 @@ function TodoProvider(props){
     } = useLocalStorage('TODOS_V1', []);
 
 
-    const [textValue, setTextValue] = React.useState('');
+    const [textValue, setTextValue] = React.useState("");
     const [newTodoValue, setNewTodoValue] = React.useState('');
 
 
