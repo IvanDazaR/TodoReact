@@ -1,27 +1,28 @@
 import React from "react";
 import '../styles/CreateTodo.scss';
 
-function CreateTodo(props){
+function CreateTodo(props) {
 
-    const onChange =(event)=> {
-
+    const onChange = (event) => {
         props.setNewTodoValue(event.target.value);
     }
-    // const inputRequired = () =>{
-        
-    // }
+
+    const valid = () =>{
+        props.setField(props.newTodoValue);
+    }
+
     return (
         <div className="input-group">
             <label className="input-group__lable" htmlFor="create-task">Write Your Task</label>
-            <input 
+            <input
                 value={props.newTodoValue}
                 onChange={onChange}
-                type="text" 
+                type="text"
                 id="create-task"
-                // onBlur={}
-            /> 
-        </div> 
+                onKeyUp={valid}
+            />
+        </div>
     );
 }
 
-export {CreateTodo};
+export { CreateTodo };

@@ -13,7 +13,7 @@ function TodoProvider(props){
         error,
     } = useLocalStorage('TODOS_V1', []);
 
-
+    const [field, setField] = React.useState(null);
     const [textValue, setTextValue] = React.useState("");
     const [newTodoValue, setNewTodoValue] = React.useState('');
 
@@ -81,8 +81,8 @@ function TodoProvider(props){
             setTextValue,
             newTodoValue,
             setNewTodoValue,
-            // isChecked,
-            // setIsChecked,
+            field, 
+            setField,
         }}>
             {props.children}
         </TodoContext.Provider>
