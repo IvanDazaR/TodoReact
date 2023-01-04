@@ -12,7 +12,7 @@ function TodoProvider(props){
         loading,
         error,
     } = useLocalStorage('TODOS_V1', []);
-
+    const [todoAlreadyExist, setTodoAlreadyExist] = React.useState(null);
     const [field, setField] = React.useState(null);
     const [textValue, setTextValue] = React.useState("");
     const [newTodoValue, setNewTodoValue] = React.useState('');
@@ -83,6 +83,9 @@ function TodoProvider(props){
             setNewTodoValue,
             field, 
             setField,
+            todos,
+            todoAlreadyExist, 
+            setTodoAlreadyExist
         }}>
             {props.children}
         </TodoContext.Provider>

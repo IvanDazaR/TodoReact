@@ -1,0 +1,7 @@
+@import '../styles/global.scss';
+.newTodoError {
+    max-width: 200px;
+    color: $red;
+    font-weight: bolder;
+    margin-left: 100px;
+}

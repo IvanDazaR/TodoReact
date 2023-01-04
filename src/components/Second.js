@@ -16,7 +16,6 @@ import {EmptyTodos} from './EmptyTodos';
     //   { text: 'Llorar con la llorona', completed: false },
     //   { text: 'LALALALAA', completed: false },
     // ];
-
 function Second(){
     const {
         searchedTodos,
@@ -26,15 +25,8 @@ function Second(){
         error,
     } = React.useContext(TodoContext);
 
-    const prueba = searchedTodos.map((todo) => (
-        <TodoItem 
-            key ={crypto.randomUUID()}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={()=> completeTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-        />
-        ) );
+    // let todoKey =crypto.randomUUID();
+
     return(
         <div className="second">
             <TodoCounter/>
@@ -45,7 +37,17 @@ function Second(){
                 {loading && <TodosLoading />}
                 {(!loading && !searchedTodos.length) && <EmptyTodos />}
 
-                {prueba}
+                {searchedTodos.map( todo => (
+                    <TodoItem
+                        // id={crypto.randomUUID()}
+                        key={todo.text}
+                        text={todo.text}
+                        completed={todo.completed}
+                        onComplete={() => completeTodo(todo.text)}
+                        onDelete={() => deleteTodo(todo.text)}
+                        // onDelete={() => deleteTodo({key})}
+                    />
+                ))}
             </TodoList>
         </div>
     );

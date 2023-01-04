@@ -6,6 +6,10 @@ import book from '../images/book.svg';
 import { TodoContext } from "./TodoContext"; 
 import { BiError } from 'react-icons/bi';
 
+
+import { AddNewTodoError } from './AddNewTodoError';
+
+
 function Principal(){
 
     const {
@@ -13,6 +17,7 @@ function Principal(){
         setNewTodoValue,
         field, 
         setField,
+        todoAlreadyExist,
     } = React.useContext(TodoContext);
 
     
@@ -34,11 +39,15 @@ function Principal(){
                 setNewTodoValue={setNewTodoValue}
                 setField={setField}
             />
-            {field === false && 
+            {field === false ? 
                 <p>
                     <BiError />
                     <b>Error:</b> Fill the field.
-                </p>}
+                </p>
+                : todoAlreadyExist === true &&
+                   <AddNewTodoError />
+                }
+                 
             <CreateTodoButton 
                 newTodoValue={newTodoValue}
                 setNewTodoValue={setNewTodoValue}

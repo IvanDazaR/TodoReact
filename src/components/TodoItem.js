@@ -5,8 +5,8 @@ import { Modal } from "./Modal";
 import { TodoForm } from "./TodoForm";
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 
-function TodoItem (props){
-    
+function TodoItem(props) {
+
     const {
         openModal,
         setOpenModal,
@@ -16,20 +16,23 @@ function TodoItem (props){
 
     const [isChecked, setIsChecked] = React.useState(props.completed ? true : false);
 
-const onClickXButton = () => {
+    const onClickXButton = () => {
+        // setTextValue(props.itskey);
+        console.log(props.id);
         setTextValue(props.text);
         setOpenModal(true);
     };
-    
+
     const handleOnChange = () => {
         setIsChecked(!isChecked);
-      };
-    return(
+    };
+    
+    return (
         <>
             <li className="TodoItem">
                 <label className="TodoItem-lable">
-                    <input 
-                        className="TodoItem-input" 
+                    <input
+                        className="TodoItem-input"
                         type="checkbox"
                         checked={isChecked}
                         onChange={handleOnChange}
@@ -42,7 +45,7 @@ const onClickXButton = () => {
                 <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
                     {props.text}
                 </p>
-                <span 
+                <span
                     className="Icon Icon-delete"
                     onClick={onClickXButton}
                 >
@@ -50,15 +53,15 @@ const onClickXButton = () => {
                 </span>
             </li>
 
-           
+
             {!!openModal && (
                 <Modal>
-                    <TodoForm  textValue={textValue}/>
-                    
+                    <TodoForm textValue={textValue} />
+
                 </Modal>
             )}
         </>
     );
 }
 
-export {TodoItem};
+export { TodoItem };

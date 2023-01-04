@@ -2,36 +2,40 @@ import React from "react";
 import '../styles/CreateTodoButton.scss';
 import { TodoContext } from "./TodoContext";
 
-function CreateTodoButton(props){
+function CreateTodoButton(props) {
     const {
         addTodo,
-       } = React.useContext(TodoContext);
+        todos, 
+        setTodoAlreadyExist
+    } = React.useContext(TodoContext);
 
     const onSubmit = () => {
         // Utilizamos nuestra función para añadir nuestro TODO
-        if(props.newTodoValue.length <= 0){
-            // alert("Write your task");
+        if (props.newTodoValue.length <= 0) {
             return;
         };
-        // if(props.newTodoValue.length <= 0)return;
-        
-        addTodo(props.newTodoValue);
-        // var element = document.getElementById("create-task");
-        // element.blur();
-      };
-    
-    return(
-        <button 
-            // type="button"
-            type="submit"
-            className="CreateTodoButton"
-            onClick={onSubmit}
-            // onSubmit={onSubmit}
-        >
-            Create Task
-        </button>
+
+        if (!todos.find(todo => todo.text === props.newTodoValue)) {
+            addTodo(props.newTodoValue);
+            setTodoAlreadyExist(false);
+        } else {
+            setTodoAlreadyExist(true);
+
+        }
+
+    };
+
+    return (
+            <button
+                type="submit"
+                className="CreateTodoButton"
+                onClick={onSubmit}
+            >
+                Create Task
+            </button>
+     
     );
-    
+
 }
 
-export {CreateTodoButton};
+export { CreateTodoButton };
