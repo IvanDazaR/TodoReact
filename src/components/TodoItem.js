@@ -17,8 +17,6 @@ function TodoItem(props) {
     const [isChecked, setIsChecked] = React.useState(props.completed ? true : false);
 
     const onClickXButton = () => {
-        // setTextValue(props.itskey);
-        console.log(props.id);
         setTextValue(props.text);
         setOpenModal(true);
     };
