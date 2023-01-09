@@ -20,6 +20,7 @@ function CreateTodo(props) {
                 type="text"
                 id="create-task"
                 onKeyUp={valid}
+                onBlur={valid}
             />
         </div>
     );

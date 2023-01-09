@@ -30,7 +30,7 @@ function Principal(){
             setField(null);
         }
     }
-
+    
     return(
         <form onSubmit={onSubmit} className="principal" name="myform">
             <h1>Create a New Task</h1>
@@ -39,6 +39,7 @@ function Principal(){
                 setNewTodoValue={setNewTodoValue}
                 setField={setField}
             />
+           
             {field === false ? 
                 <p>
                     <BiError />
