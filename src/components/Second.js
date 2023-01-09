@@ -10,12 +10,6 @@ import {TodosError} from './TodosError';
 import {TodosLoading} from './TodosLoading';
 import {EmptyTodos} from './EmptyTodos';
 
-    // const defaultTodos = [
-    //   { text: 'Cortar cebolla', completed: false },
-    //   { text: 'Tomar el cursso de intro a React', completed: false },
-    //   { text: 'Llorar con la llorona', completed: false },
-    //   { text: 'LALALALAA', completed: false },
-    // ];
 function Second(){
     const {
         searchedTodos,
@@ -25,7 +19,6 @@ function Second(){
         error,
     } = React.useContext(TodoContext);
 
-    // let todoKey =crypto.randomUUID();
 
     return(
         <div className="second">
@@ -45,7 +38,6 @@ function Second(){
                         completed={todo.completed}
                         onComplete={() => completeTodo(todo.text)}
                         onDelete={() => deleteTodo(todo.text)}
-                        // onDelete={() => deleteTodo({key})}
                     />
                 ))}
             </TodoList>
