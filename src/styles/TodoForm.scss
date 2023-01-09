@@ -2,9 +2,7 @@
 
 .TodoForm {
     padding: 20px;
-    width: 90%;
     max-width: 300px;
-    height: 155px;
     background-color: $background-blue;
     border-radius: 6px;
     display: flex;
@@ -13,7 +11,6 @@
 }
 .TodoForm p {
     width: auto;
-    height: 63px;
     margin: auto;
     font-family: 'Times New Roman';
     font-style: normal;
@@ -21,6 +18,9 @@
     font-size: 18px;
     line-height: 21px;
     text-align: center;
+}
+.TodoForm p span{
+    color: $yellow;
 }
 .button {
     margin: 16px;
