@@ -1,23 +1,25 @@
 import React from "react";
 import '../styles/TodoItem.scss';
-import { TodoContext } from "./TodoContext";
 import { Modal } from "./Modal";
 import { TodoForm } from "./TodoForm";
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 
-function TodoItem(props) {
-
-    const {
-        openModal,
+function TodoItem(
+    {
+        completed, 
+        text, 
+        onComplete,
+        setTextValue, 
+        textValue, 
+        openModal, 
         setOpenModal,
-        setTextValue,
-        textValue,
-    } = React.useContext(TodoContext);
+        deleteTodo
+    }) {
 
-    const [isChecked, setIsChecked] = React.useState(props.completed ? true : false);
+    const [isChecked, setIsChecked] = React.useState(completed ? true : false);
 
     const onClickXButton = () => {
-        setTextValue(props.text);
+        setTextValue(text);
         setOpenModal(true);
     };
 
@@ -37,11 +39,11 @@ function TodoItem(props) {
                     />
                     <span
                         className="checkbox"
-                        onClick={props.onComplete}
+                        onClick={onComplete}
                     />
                 </label>
-                <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
-                    {props.text}
+                <p className={`TodoItem-p ${completed && 'TodoItem-p--complete'}`}>
+                    {text}
                 </p>
                 <span
                     className="Icon Icon-delete"
@@ -54,7 +56,11 @@ function TodoItem(props) {
 
             {!!openModal && (
                 <Modal>
-                    <TodoForm textValue={textValue} />
+                    <TodoForm 
+                        textValue={textValue} 
+                        setOpenModal={setOpenModal}
+                        deleteTodo={deleteTodo}
+                    />
 
                 </Modal>
             )}

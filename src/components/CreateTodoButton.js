@@ -1,22 +1,25 @@
 import React from "react";
 import '../styles/CreateTodoButton.scss';
-import { TodoContext } from "./TodoContext";
 
-function CreateTodoButton(props) {
-    const {
+function CreateTodoButton(
+    {
+        newTodoValue,
         addTodo,
         todos, 
         setTodoAlreadyExist
-    } = React.useContext(TodoContext);
+    }) {
+
+   
+        
 
     const onSubmit = () => {
-        // Utilizamos nuestra función para añadir nuestro TODO
-        if (props.newTodoValue.length <= 0) {
+        // Use ToDo function to add a new todo
+        if (newTodoValue.length <= 0) {
             return;
         };
 
-        if (!todos.find(todo => todo.text === props.newTodoValue)) {
-            addTodo(props.newTodoValue);
+        if (!todos.find(todo => todo.text === newTodoValue)) {
+            addTodo(newTodoValue);
             setTodoAlreadyExist(false);
         } else {
             setTodoAlreadyExist(true);

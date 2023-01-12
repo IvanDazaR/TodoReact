@@ -1,10 +1,10 @@
 import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
-const TodoContext = React.createContext();
 
 
-function TodoProvider(props){
+
+function useTodos(){
     // Using the Custom Hook localStorage
     const {
         item: todos, 
@@ -63,8 +63,7 @@ function TodoProvider(props){
     };
 
 
-    return(
-        <TodoContext.Provider value={{
+    return{
             loading,
             error,
             searchValue,
@@ -86,10 +85,7 @@ function TodoProvider(props){
             todos,
             todoAlreadyExist, 
             setTodoAlreadyExist
-        }}>
-            {props.children}
-        </TodoContext.Provider>
-    );
+        };
 }
 
-export {TodoContext, TodoProvider};
+export { useTodos };

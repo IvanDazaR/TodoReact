@@ -1,24 +1,7 @@
 import React from "react";
-import { CreateTodoButton } from "./CreateTodoButton";
-import { CreateTodo } from "./CreateTodo";
-import '../styles/Principal.scss';
-import book from '../images/book.svg';
-import { TodoContext } from "./TodoContext"; 
-import { BiError } from 'react-icons/bi';
 
 
-import { AddNewTodoError } from './AddNewTodoError';
-
-
-function Principal(){
-
-    const {
-        newTodoValue,
-        setNewTodoValue,
-        field, 
-        setField,
-        todoAlreadyExist,
-    } = React.useContext(TodoContext);
+function Principal({ children, field, setField}){
 
     
     const onSubmit = (event) => {
@@ -33,27 +16,7 @@ function Principal(){
     
     return(
         <form onSubmit={onSubmit} className="principal" name="myform">
-            <h1>Create a New Task</h1>
-            <CreateTodo 
-                newTodoValue={newTodoValue}
-                setNewTodoValue={setNewTodoValue}
-                setField={setField}
-            />
-           
-            {field === false ? 
-                <p>
-                    <BiError />
-                    <b>Error:</b> Fill the field.
-                </p>
-                : todoAlreadyExist === true &&
-                   <AddNewTodoError />
-                }
-                 
-            <CreateTodoButton 
-                newTodoValue={newTodoValue}
-                setNewTodoValue={setNewTodoValue}
-            />
-            <img src={book} alt="Book-img"></img>
+            { children }
         </form> 
     )
 }
