@@ -2,7 +2,7 @@ import React from "react";
 import '../styles/TodoSearch.scss';
 
 
-function TodoSearch({searchValue, setSearchValue}){
+function TodoSearch({searchValue, setSearchValue, loading}){
     
     
     const onSearchValueChange= (event) =>{
@@ -14,7 +14,8 @@ function TodoSearch({searchValue, setSearchValue}){
             value={searchValue}
             className="TodoSearch" 
             placeholder="Search your Task"
-            onChange={onSearchValueChange}    
+            onChange={onSearchValueChange} 
+            disabled={loading}   
         />
     );
 }
