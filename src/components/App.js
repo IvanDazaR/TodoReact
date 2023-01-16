@@ -19,6 +19,7 @@ import { TodoItem } from "./TodoItem";
 import { TodosError } from './TodosError';
 import { TodosLoading } from './TodosLoading';
 import { EmptyTodos } from './EmptyTodos';
+import {EmptySearchReasults} from './EmptySearchResults';
 
 function App() {
   const {
@@ -78,18 +79,40 @@ function App() {
         <TodoCounter
           totalTodos={totalTodos}
           completedTodos={completedTodos}
+          loading={loading}
         />
         <TodoSearch
           searchValue={searchValue}
           setSearchValue={setSearchValue}
+          loading={loading}
         />
-        <TodoList>
-          {/* Manage UseEffect with loading and errors */}
-          {error && <TodosError error={error} />}
-          {loading && <TodosLoading />}
-          {(!loading && !searchedTodos.length) && <EmptyTodos />}
-
-          {searchedTodos.map(todo => (
+        <TodoList 
+          error={error}
+          loading={loading}
+          searchedTodos={searchedTodos}
+          totalTodos={totalTodos}
+          searchText={searchValue}
+          onError={() => <TodosError />}
+          onLoading={() => <TodosLoading />}
+          onEmptyTodos={() => <EmptyTodos />}
+          onEmptySearchReasults={(searchText) => <EmptySearchReasults searchText={searchText}/>}
+          // render={todo => (
+          //   <TodoItem
+          //     // id={crypto.randomUUID()}
+          //     key={todo.text}
+          //     text={todo.text}
+          //     completed={todo.completed}
+          //     onComplete={() => completeTodo(todo.text)}
+          //     onDelete={() => deleteTodo(todo.text)}
+          //     setTextValue={setTextValue}
+          //     textValue={textValue}
+          //     openModal={openModal}
+          //     setOpenModal={setOpenModal}
+          //     deleteTodo={deleteTodo}
+          //   />
+          // )}
+        >
+          {todo => (
             <TodoItem
               // id={crypto.randomUUID()}
               key={todo.text}
@@ -103,8 +126,9 @@ function App() {
               setOpenModal={setOpenModal}
               deleteTodo={deleteTodo}
             />
-          ))}
+          )}
         </TodoList>
+        
       </Second>
     </React.Fragment>
   );
