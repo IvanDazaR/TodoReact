@@ -20,7 +20,7 @@ import { TodosError } from './TodosError';
 import { TodosLoading } from './TodosLoading';
 import { EmptyTodos } from './EmptyTodos';
 import { EmptySearchReasults } from './EmptySearchResults';
-import { ChangeAlertWithStorageListener } from './ChangeAlert';
+import { ChangeAlert } from './ChangeAlert';
 
 function App() {
   const {
@@ -132,7 +132,7 @@ function App() {
         </TodoList>
         
       </Second>
-      <ChangeAlertWithStorageListener 
+      <ChangeAlert 
         sincronize = {sincronizeTodos}
       />
     </React.Fragment>
