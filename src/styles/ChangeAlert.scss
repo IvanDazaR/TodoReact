@@ -1,0 +1,50 @@
+@import '../styles/global.scss';
+
+.changeAlert-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // background-color: $background-blue;
+    background-color: rgba(32, 35, 41, 0.539);
+    z-index: 2;
+}
+.change-Alert-container {
+    position:fixed;
+    top: 50%;
+    left:50%;
+    // position: absolute;
+    padding: 20px;
+    max-width: 300px;
+    background-color: $yellow;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    p {
+        width: auto;
+        margin: auto;
+        font-family: 'Times New Roman';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+    }
+    p:nth-child(2) {
+        font-weight: bold;
+    }
+
+    button {
+        margin: 16px;
+        width: 108px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+}

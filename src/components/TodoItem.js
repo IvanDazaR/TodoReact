@@ -5,18 +5,20 @@ import { TodoForm } from "./TodoForm";
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 
 function TodoItem(
+    //Props of TodoItem
     {
-        completed, 
-        text, 
+        completed,
+        text,
         onComplete,
-        setTextValue, 
-        textValue, 
-        openModal, 
+        setTextValue,
+        textValue,
+        openModal,
         setOpenModal,
         deleteTodo
     }) {
 
-    const [isChecked, setIsChecked] = React.useState(completed ? true : false);
+    // const [isChecked, setIsChecked] = React.useState(completed ? true : false);
+    const [isChecked, setIsChecked] = React.useState(false);
 
     const onClickXButton = () => {
         setTextValue(text);
@@ -26,7 +28,7 @@ function TodoItem(
     const handleOnChange = () => {
         setIsChecked(!isChecked);
     };
-    
+
     return (
         <>
             <li className="TodoItem">
@@ -34,7 +36,8 @@ function TodoItem(
                     <input
                         className="TodoItem-input"
                         type="checkbox"
-                        checked={isChecked}
+                        // checked={isChecked}
+                        checked={completed ? true : false}
                         onChange={handleOnChange}
                     />
                     <span
@@ -56,8 +59,8 @@ function TodoItem(
 
             {!!openModal && (
                 <Modal>
-                    <TodoForm 
-                        textValue={textValue} 
+                    <TodoForm
+                        textValue={textValue}
                         setOpenModal={setOpenModal}
                         deleteTodo={deleteTodo}
                     />

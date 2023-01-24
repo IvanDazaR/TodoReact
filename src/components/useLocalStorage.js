@@ -2,6 +2,7 @@ import React from "react";
 
 // Personal Custom HooK to manage the local Storage
 function useLocalStorage(itemName, initialValue){
+    const [sincronizedItem, setSincronizedItem] = React.useState(true);
     const [error, setError] = React.useState(false);
     const [loading, setLoading] = React.useState(true);
     // React Custom Hook with the initial value of the list
@@ -24,11 +25,12 @@ function useLocalStorage(itemName, initialValue){
           }
           setItem(parsedItem);
           setLoading(false);
+          setSincronizedItem(true);
        }catch {
         setError(error);
        }
-      }, 2000);
-    });
+      }, 3000);
+    }, [sincronizedItem]);
   
   
   
@@ -45,11 +47,16 @@ function useLocalStorage(itemName, initialValue){
         }
         
     };
+    const sincronizeItem = () => {
+      setLoading(true);
+      setSincronizedItem(false);
+    }
     return {
       item,
       saveItem,
       loading,
       error,
+      sincronizeItem,
     };
   }
 

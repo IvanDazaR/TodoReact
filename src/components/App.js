@@ -19,7 +19,8 @@ import { TodoItem } from "./TodoItem";
 import { TodosError } from './TodosError';
 import { TodosLoading } from './TodosLoading';
 import { EmptyTodos } from './EmptyTodos';
-import {EmptySearchReasults} from './EmptySearchResults';
+import { EmptySearchReasults } from './EmptySearchResults';
+import { ChangeAlertWithStorageListener } from './ChangeAlert';
 
 function App() {
   const {
@@ -44,6 +45,7 @@ function App() {
     addTodo,
     todos,
     setTodoAlreadyExist,
+    sincronizeTodos,
   } = useTodos();
 
    return (
@@ -130,6 +132,9 @@ function App() {
         </TodoList>
         
       </Second>
+      <ChangeAlertWithStorageListener 
+        sincronize = {sincronizeTodos}
+      />
     </React.Fragment>
   );
 }
